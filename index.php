@@ -13,6 +13,12 @@
     <title>Beranda</title>
 </head>
 <body>
-    
+    <!-- header -->
+
+    <!-- welcome-section -->
+
+    <!-- strength of gawean, icons, and -->
+
+    <!--  -->
 </body>
 </html>

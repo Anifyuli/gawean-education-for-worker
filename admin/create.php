@@ -17,32 +17,37 @@
                       <h4>Tambah Materi Baru</h4>
                     </div>
                     <div class="card-body">
+
+                    <form class="" action="add.php" method="post">
+
                       <div class="form-group">
                         <label>Judul</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="judul" class="form-control">
                       </div>
 
                       <div class="form-group">
 
-                        <textarea id="summernote" name="editordata"></textarea>
+                        <textarea id="summernote" name="content"></textarea>
 
                       </div>
 
 
                       <div class="form-group">
                         <label>Kategory</label>
-                        <select class="form-control" name="">
+                        <select class="form-control" name="kategori">
                           <option value="">Facebook Ads</option>
                           <option value="">Google Ads</option>
                           <option value="">Whatsapp Marketing</option>
 
-                          </optgroup>
-                        </select>
-                      </div>
+                        </optgroup>
+                      </select>
+                    </div>
 
-                      <div class="form-group">
-                        <button class="btn btn-primary" type="submit" name="button">Publish</button>
-                      </div>
+                    <div class="form-group">
+                      <button class="btn btn-primary" type="submit" name="submit">Publish</button>
+                    </div>
+
+                    </form>
 
                     </div>
                   </div>

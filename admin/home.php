@@ -13,7 +13,7 @@
                     <div class="card">
                       <div class="card-header">
                         <!-- <h4>Simple Table</h4> -->
-                        <button class="btn btn-primary" type="button" name="button">Tambah Materi Baru</button>
+                        <a class="btn btn-primary" href="create.php" type="button" name="button">Tambah Materi Baru</a>
                       </div>
                       <div class="card-body">
                         <div class="table-responsive">
@@ -22,24 +22,39 @@
                               <th>#</th>
                               <th>Judul</th>
                               <th>Created At</th>
+                              <th>Kategori</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
                             <tr>
                               <td>1</td>
-                              <td>Irwansyah Saputra</td>
+                              <td>
+                                  Memaksimalkan Digital Marketing di Era Pandemi
+                                  <div class="text text-small text-muted">
+                                    <a href="edit.php?id=3">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a> | Created 2017-01-09
+                                  </div>
+
+
+                              </td>
                               <td>2017-01-09</td>
-                              <td><div class="badge badge-success">Active</div></td>
-                              <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                              <td>FB Ads</td>
+                              <td><div class="badge badge-secondary">Active</div></td>
+                              <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
-          
+
                             <tr>
-                              <td>4</td>
-                              <td>Rizal Fakhri</td>
+                              <td>2</td>
+                              <td>
+                                Pelatihan Facebook Ads - Basic
+                                <div class="text text-small text-muted">
+                                  Edit | Show | Delete | Created 2017-01-09
+                                </div>
+                              </td>
                               <td>2017-01-11</td>
-                              <td><div class="badge badge-success">Active</div></td>
-                              <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                              <td>Google Ads</td>
+                              <td><div class="badge badge-secondary">Active</div></td>
+                              <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
                           </table>
                         </div>

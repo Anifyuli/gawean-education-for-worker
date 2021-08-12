@@ -1,4 +1,11 @@
-<?php   include 'header.php'; ?>
+<?php
+
+include 'header.php';
+include '../functions.php';
+
+$materi = gawean_query("SELECT materi.*, kategori.kategori FROM materi join kategori on kategori_id = kategori.id");
+
+?>
 
 
           <div class="section-header">
@@ -26,36 +33,29 @@
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
+
+                            <?php
+                              foreach($materi as $row){
+
+                             ?>
                             <tr>
                               <td>1</td>
                               <td>
-                                  Memaksimalkan Digital Marketing di Era Pandemi
+                                  <?= $row['judul']; ?>
                                   <div class="text text-small text-muted">
-                                    <a href="edit.php?id=3">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a> | Created 2017-01-09
+                                    <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a> | Created 2017-01-09
                                   </div>
 
 
                               </td>
-                              <td>2017-01-09</td>
-                              <td>FB Ads</td>
-                              <td><div class="badge badge-secondary">Active</div></td>
+                              <td><?= $row['tanggal_post']; ?></td>
+                              <td><?= $row['kategori']; ?></td>
+                              <td><div class="badge badge-secondary"><?= $row['status']; ?></div></td>
                               <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
+                            <?php } ?>
 
-                            <tr>
-                              <td>2</td>
-                              <td>
-                                Pelatihan Facebook Ads - Basic
-                                <div class="text text-small text-muted">
-                                  Edit | Show | Delete | Created 2017-01-09
-                                </div>
-                              </td>
-                              <td>2017-01-11</td>
-                              <td>Google Ads</td>
-                              <td><div class="badge badge-secondary">Active</div></td>
-                              <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
-                            </tr>
                           </table>
                         </div>
                       </div>

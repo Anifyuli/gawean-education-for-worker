@@ -4,7 +4,7 @@ include 'config/connect.php';
 
 
 // query function ex : gawean_query("select * from materi");
-function gawean_query($sql){
+function query_ambil($sql){
   global $conn;
 
   $result = mysqli_query($conn, $sql);
@@ -15,4 +15,17 @@ function gawean_query($sql){
   }
 
   return $data;
+}
+
+function query($sql){
+  global $conn;
+
+  if (mysqli_query($conn, $sql)) {
+    return "Proses Query Berhasil";
+  } else {
+    return "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+
+  mysqli_close($conn);
+
 }

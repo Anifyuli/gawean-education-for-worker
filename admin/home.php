@@ -3,7 +3,7 @@
 include 'header.php';
 include '../functions.php';
 
-$materi = gawean_query("SELECT materi.*, kategori.kategori FROM materi join kategori on kategori_id = kategori.id");
+$materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi join kategori on kategori_id = kategori.id");
 
 ?>
 
@@ -43,7 +43,7 @@ $materi = gawean_query("SELECT materi.*, kategori.kategori FROM materi join kate
                               <td>
                                   <?= $row['judul']; ?>
                                   <div class="text text-small text-muted">
-                                    <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a> | Created 2017-01-09
+                                    <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=<?= $row['id']; ?>">Delete</a> | Created 2017-01-09
                                   </div>
 
 

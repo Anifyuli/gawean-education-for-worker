@@ -2,17 +2,25 @@
 
 include '../functions.php';
 
-$kategori = query_ambil("SELECT * FROM kategori");
-
 $id = $_GET['id'];
-$data = query_ambil("SELECT * FROM materi where id = $id");
-$materi = $data[0];
+$data = query_ambil("SELECT * FROM kategori where id = $id");
+$kategori = $data[0];
+
+if(isset($_POST['submit'])){
+
+  $post_kategori = $_POST['kategori'];
+
+  query("UPDATE kategori set kategori = '".$post_kategori."' where id = $id");
+
+  header('Location:kategori.php');
+
+}
 
 ?>
 
 
           <div class="section-header">
-            <h1>Halaman Post</h1>
+            <h1>Kategori</h1>
           </div>
 
           <div class="section-body">
@@ -23,37 +31,17 @@ $materi = $data[0];
                   <!-- form -->
 
                   <div class="card">
-                    <div class="card-header">
-                      <h4>Edit Materi</h4>
-                    </div>
+
                     <div class="card-body">
-                      <form class="" action="update.php" method="post">
+                      <form class="" action="" method="post">
 
                       <input type="hidden" name="id" value="<?= $id; ?>">
-                      <div class="form-group">
-                        <label>Judul</label>
-                        <input type="text" class="form-control" name="judul" value="<?=$materi['judul'];?>">
-                      </div>
 
                       <div class="form-group">
-
-                        <textarea id="summernote" name="content"><?=$materi['content'];?></textarea>
-
+                        <label>Kategori</label>
+                        <input type="text" class="form-control" name="kategori" value="<?=$kategori['kategori'];?>">
                       </div>
 
-
-                      <div class="form-group">
-                        <label>Kategory</label>
-                        <select class="form-control" name="kategori">
-                          <?php foreach($kategori as $row) { ?>
-
-                          <option value="<?= $row['id'] ?>"><?= $row['kategori'] ?></option>
-
-                          <?php } ?>
-
-                        </optgroup>
-                      </select>
-                      </div>
 
                       <div class="form-group">
                         <button class="btn btn-primary" type="submit" name="submit">Simpan Perubahan</button>

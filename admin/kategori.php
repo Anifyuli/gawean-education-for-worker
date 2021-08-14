@@ -65,7 +65,7 @@ $materi = query_ambil("SELECT count(*) as qty, kategori_id FROM materi group by 
                               <td>
                                   <?= $row['kategori'] ;?>
                                   <div class="text text-small text-muted">
-                                    <a class="edit" href="kategori_edit.php?id=3" >Edit</a> | <a href="delete.php?id=<?= $row['id'] ;?>&page=kategori">Delete</a>
+                                    <a  href="kategori_edit.php?id=<?= $row['id'] ;?>" >Edit</a> | <a href="delete.php?id=<?= $row['id'] ;?>&page=kategori">Delete</a>
                                   </div>
                               </td>
                               <td>

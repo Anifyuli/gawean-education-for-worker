@@ -1,4 +1,21 @@
-<?php   include 'header.php'; ?>
+<?php
+include 'header.php';
+include '../functions.php';
+
+if(isset($_POST['submit'])){
+   $kategori = $_POST['kategori'];
+
+   query("INSERT INTO kategori (kategori) VALUES ('$kategori')");
+}
+
+$kategori = query_ambil("SELECT * FROM kategori");
+
+$materi = query_ambil("SELECT count(*) as qty, kategori_id FROM materi group by kategori_id");
+
+
+
+
+?>
 
 
           <div class="section-header">
@@ -15,16 +32,15 @@
                         <!-- <h4>Simple Table</h4> -->
                         <!-- <a class="btn btn-primary" href="kategori_add.php" type="button" name="button">Tambah Kategori</a> -->
 
-                        <form>
+                        <form action="" method="post">
 
                             <div class="form-row">
                               <div class="form-group col-auto">
-                                <input type="text" class="form-control" placeholder="Tambah Kategori Baru">
+                                <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Tambah Kategori Baru">
                               </div>
 
-
                               <div class="col">
-                              <button class="btn btn-primary" type="button" name="button">Simpan</button>
+                              <button class="btn btn-primary" type="submit" name="submit">Simpan</button>
                               </div>
                             </div>
 
@@ -41,30 +57,33 @@
                               <th>Materi</th>
                               <th>Action</th>
                             </tr>
+                            <?php
+                            $i = 1;
+                            foreach($kategori as $row){ ?>
                             <tr>
-                              <td>1</td>
+                              <td><?= $i; ?></td>
                               <td>
-                                  Facebook
+                                  <?= $row['kategori'] ;?>
                                   <div class="text text-small text-muted">
-                                    <a href="edit.php?id=3">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a>
+                                    <a class="edit" href="kategori_edit.php?id=3" >Edit</a> | <a href="delete.php?id=<?= $row['id'] ;?>&page=kategori">Delete</a>
                                   </div>
                               </td>
-                              <td>4</td>
-                              <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
-                            </tr>
-
-
-                            <tr>
-                              <td>2</td>
                               <td>
-                                Google Ads
-                                <div class="text text-small text-muted">
-                                  Edit | Show | Delete
-                                </div>
-                              </td>
-                              <td>7</td>
+                                <?php
+                                  foreach($materi as $data){
+                                      if($data['kategori_id'] == $row['id']){
+                                        echo $data['qty'];
+                                      }
+                                  }
+
+                                  ?>
+                             </td>
                               <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
+
+                          <?php
+                            $i++;
+                         } ?>
                           </table>
                         </div>
                       </div>
@@ -92,6 +111,9 @@
               </div>
               <!-- akhir row -->
           </div>
+
+
+
 
 
 <?php   include 'footer.php'; ?>

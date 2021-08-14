@@ -35,11 +35,12 @@ $materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi join kateg
                             </tr>
 
                             <?php
+                              $i=1;
                               foreach($materi as $row){
 
                              ?>
                             <tr>
-                              <td>1</td>
+                              <td><?= $i; ?></td>
                               <td>
                                   <?= $row['judul']; ?>
                                   <div class="text text-small text-muted">
@@ -54,7 +55,7 @@ $materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi join kateg
                               <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
-                            <?php } ?>
+                            <?php $i++; } ?>
 
                           </table>
                         </div>

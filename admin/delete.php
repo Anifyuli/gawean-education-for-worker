@@ -4,10 +4,20 @@ include '../functions.php';
 
 if(isset($_GET["id"])){
   $id = $_GET["id"];
+  $page = $_GET["page"];
 
-  query("DELETE from materi where id = $id");
+  if($page=='kategori'){
 
-  header('Location:home.php');
+    query("DELETE from kategori where id = $id");
+    header('Location:kategori.php');
+
+  }else{
+
+    query("DELETE from materi where id = $id");
+    header('Location:home.php');
+  }
+
+
   exit;
 }
 

@@ -3,7 +3,21 @@
 include 'header.php';
 include '../functions.php';
 
-$materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi join kategori on kategori_id = kategori.id");
+// jumlah Materi
+$jumlah_per_hal = 5;
+$jumlah = count(query_ambil("SELECT * from materi"));
+$page = (isset($_GET['page']))? $_GET['page'] : 1;
+$jumlah_hal = ceil($jumlah / $jumlah_per_hal);
+
+$index_awal = ($jumlah_per_hal * $page ) - $jumlah_per_hal;
+
+var_dump($page);
+
+
+$materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi
+                        join kategori on kategori_id = kategori.id
+                        limit $index_awal,$jumlah_per_hal
+                        ");
 
 ?>
 
@@ -61,19 +75,21 @@ $materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi join kateg
                         </div>
                       </div>
                       <div class="card-footer text-right">
+
                         <nav class="d-inline-block">
                           <ul class="pagination mb-0">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
+
+                          <!-- <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                          </li> -->
+
+                            <?php $i = 1; while($i <= $jumlah_hal ) { ?>
+                            <li class="page-item <?php if($i == $page){echo 'active';} ?>"><a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                            <?php $i++; } ?>
+
+                            <!-- <li class="page-item">
                               <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                            </li>
+                            </li> -->
                           </ul>
                         </nav>
                       </div>

@@ -1,4 +1,14 @@
-<?php   include 'header.php'; ?>
+<?php   include 'header.php';
+
+include '../functions.php';
+
+$kategori = query_ambil("SELECT * FROM kategori");
+
+$id = $_GET['id'];
+$data = query_ambil("SELECT * FROM materi where id = $id");
+$materi = $data[0];
+
+?>
 
 
           <div class="section-header">
@@ -17,33 +27,38 @@
                       <h4>Edit Materi</h4>
                     </div>
                     <div class="card-body">
+                      <form class="" action="update.php" method="post">
+
+                      <input type="hidden" name="id" value="<?= $id; ?>">
                       <div class="form-group">
                         <label>Judul</label>
-                        <input type="text" class="form-control" value="Judul yang akan di edit">
+                        <input type="text" class="form-control" name="judul" value="<?=$materi['judul'];?>">
                       </div>
 
                       <div class="form-group">
 
-                        <textarea id="summernote" name="editordata">Isi Materi yang akan di edit</textarea>
+                        <textarea id="summernote" name="content"><?=$materi['content'];?></textarea>
 
                       </div>
 
 
                       <div class="form-group">
                         <label>Kategory</label>
-                        <select class="form-control" name="">
-                          <option value="">Facebook Ads</option>
-                          <option value="">Google Ads</option>
-                          <option value="">Whatsapp Marketing</option>
+                        <select class="form-control" name="kategori">
+                          <?php foreach($kategori as $row) { ?>
 
-                          </optgroup>
-                        </select>
+                          <option value="<?= $row['id'] ?>"><?= $row['kategori'] ?></option>
+
+                          <?php } ?>
+
+                        </optgroup>
+                      </select>
                       </div>
 
                       <div class="form-group">
-                        <button class="btn btn-primary" type="submit" name="button">Simpan Perubahan</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Simpan Perubahan</button>
                       </div>
-
+                      </form>
                     </div>
                   </div>
                   <!-- akhir form -->

@@ -1,4 +1,25 @@
-<?php   include 'header.php'; ?>
+<?php
+
+include 'header.php';
+include '../functions.php';
+
+// jumlah Materi
+$jumlah_per_hal = 5;
+$jumlah = count(query_ambil("SELECT * from materi"));
+$page = (isset($_GET['page']))? $_GET['page'] : 1;
+$jumlah_hal = ceil($jumlah / $jumlah_per_hal);
+
+$index_awal = ($jumlah_per_hal * $page ) - $jumlah_per_hal;
+
+var_dump($page);
+
+
+$materi = query_ambil("SELECT materi.*, kategori.kategori FROM materi
+                        join kategori on kategori_id = kategori.id
+                        limit $index_awal,$jumlah_per_hal
+                        ");
+
+?>
 
 
           <div class="section-header">
@@ -26,53 +47,49 @@
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
+
+                            <?php
+                              $i=1;
+                              foreach($materi as $row){
+
+                             ?>
                             <tr>
-                              <td>1</td>
+                              <td><?= $i; ?></td>
                               <td>
-                                  Memaksimalkan Digital Marketing di Era Pandemi
+                                  <?= $row['judul']; ?>
                                   <div class="text text-small text-muted">
-                                    <a href="edit.php?id=3">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=3">Delete</a> | Created 2017-01-09
+                                    <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> | <a href="../page.php?id=3">Show</a> | <a href="delete.php?id=<?= $row['id']; ?>">Delete</a> | Created 2017-01-09
                                   </div>
 
 
                               </td>
-                              <td>2017-01-09</td>
-                              <td>FB Ads</td>
-                              <td><div class="badge badge-secondary">Active</div></td>
+                              <td><?= $row['tanggal_post']; ?></td>
+                              <td><?= $row['kategori']; ?></td>
+                              <td><div class="badge badge-secondary"><?= $row['status']; ?></div></td>
                               <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
+                            <?php $i++; } ?>
 
-                            <tr>
-                              <td>2</td>
-                              <td>
-                                Pelatihan Facebook Ads - Basic
-                                <div class="text text-small text-muted">
-                                  Edit | Show | Delete | Created 2017-01-09
-                                </div>
-                              </td>
-                              <td>2017-01-11</td>
-                              <td>Google Ads</td>
-                              <td><div class="badge badge-secondary">Active</div></td>
-                              <td><a href="#" class="btn btn-success btn-sm">Show</a></td>
-                            </tr>
                           </table>
                         </div>
                       </div>
                       <div class="card-footer text-right">
+
                         <nav class="d-inline-block">
                           <ul class="pagination mb-0">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
+
+                          <!-- <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                          </li> -->
+
+                            <?php $i = 1; while($i <= $jumlah_hal ) { ?>
+                            <li class="page-item <?php if($i == $page){echo 'active';} ?>"><a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                            <?php $i++; } ?>
+
+                            <!-- <li class="page-item">
                               <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                            </li>
+                            </li> -->
                           </ul>
                         </nav>
                       </div>

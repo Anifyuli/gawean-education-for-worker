@@ -1,4 +1,12 @@
-<?php   include 'header.php'; ?>
+<?php
+
+include 'header.php';
+include '../functions.php';
+
+$kategori = query_ambil("SELECT * FROM kategori");
+
+
+?>
 
 
           <div class="section-header">
@@ -35,9 +43,11 @@
                       <div class="form-group">
                         <label>Kategory</label>
                         <select class="form-control" name="kategori">
-                          <option value="">Facebook Ads</option>
-                          <option value="">Google Ads</option>
-                          <option value="">Whatsapp Marketing</option>
+                          <?php foreach($kategori as $row) { ?>
+
+                          <option value="<?= $row['id'] ?>"><?= $row['kategori'] ?></option>
+
+                          <?php } ?>
 
                         </optgroup>
                       </select>

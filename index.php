@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="in-ID">
 
 <head>
   <meta charset="utf-8">
@@ -35,35 +35,23 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="./index.php"><span>Scaffold</span></a></h1>
+        <h1 class="text-light"><a href="./index.php"><span>Gawean</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="./index.php">Home</a></li>
-          <li class="drop-down"><a href="">About</a>
+          <li class="active"><a href="#qna">QnA</a></li>
+          <li class="drop-down"><a href="">Kelas</a>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
+              <li><a href="#about">Pekerja</a></li>
+              <li><a href="#team">Prakerja</a></li>
+              <li><a href="#testimonials">UMKM</a></li>
             </ul>
           </li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Kabar Gawean</a></li>
+          <li><a href="#portfolio">Tentang Kami</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -87,51 +75,20 @@
           <div>
             <h1>Maju dan berkembang serta membangun insan kreatif bersama Gawean</h1>
             <h2>Dapatkan informasi, kelas atraktif untuk meningkatkan produktivitas diri dalam melihat peluang usaha di sekitar Anda</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#about" class="btn-get-started scrollto">Ayo Gabung <span class="icofont-arrow-right"></span>  </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+          <img src="assets/img/features.png" class="img-fluid" alt="">
         </div>
       </div>
     </div>
 
   </section><!-- End Hero -->
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0">
-              <h3>Learn more about us</h3>
-              <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate tera noden carma palorp mades tera.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
 
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <section id="qna" class="features">
       <div class="container">
 
         <div class="row">
@@ -139,19 +96,19 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item" data-aos="fade-up">
                 <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                  <h4>Modi sit est</h4>
-                  <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
+                  <h4>Apa itu Gawean?</h4>
+                  <p>Gawean adalah platform berbagi informasi dan kelas daring tentang pengembangan usaha yang cocok diikuti oleh pekerja, prakerja, UMKM, dan seseorang yang berkeinginan untuk bekerja sampingan</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="100">
                 <a class="nav-link" data-toggle="tab" href="#tab-2">
-                  <h4>Unde praesentium sed</h4>
-                  <p>Voluptas vel esse repudiandae quo excepturi.</p>
+                  <h4>Apa saja yang didapatkan dari Gawean?</h4>
+                  <p>Kelas atraktif, bacaan bermanfaat untuk pengembangan diri dan usaha, serta berita terkini tentang dunia pekerjaan</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="200">
                 <a class="nav-link" data-toggle="tab" href="#tab-3">
-                  <h4>Pariatur explicabo vel</h4>
+                  <h4></h4>
                   <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
                 </a>
               </li>
@@ -167,7 +124,7 @@
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <figure>
-                  <img src="assets/img/features-1.png" alt="" class="img-fluid">
+                  <img src="assets/img/qna.png" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-2">
@@ -197,40 +154,40 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Keunggulan Kami</h2>
+          <p>Kami memiliki segudang fitur dan keunggulan unnik yang akan selalu diperbarui setiap dwiwulan</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
             <div class="icon-box icon-box-pink">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+              <div class="icon"><i class="bx bx-bolt-circle"></i></div>
+              <h4 class="title"><a href="">Pembaruan Cepat</a></h4>
+              <p class="description">Kami berusaha untuk meningkatkan kualitas layanan kami melalui pembaruan konten, laman web, dan fitur-fitur hebat dari kami</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+              <h4 class="title"><a href="">Bahan Bacaan Keren</a></h4>
+              <p class="description">Gawean menyediakan bermacam-macam artikel dengan tujuan untuk membuka fikiran Anda tentang dunia usaha dan memancing kreativitas dan semangat berkarya</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box icon-box-green">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+              <div class="icon"><i class="bx bxs-school"></i></div>
+              <h4 class="title"><a href="">Tutor Anti Bosan</a></h4>
+              <p class="description">Kami juga menyediakan tutor-tutor yang komunikatif, santun, dan penuh dengan inovasi dalam memberikan kursus Gawean </p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box icon-box-blue">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+              <div class="icon"><i class="bx bx-laptop"></i></div>
+              <h4 class="title"><a href="">Kemudahan Akses di Semua Perangkat </a></h4>
+              <p class="description">Kami mendesain Gawean sebagai web lintas platform untuk memudahkan Anda mengakses layanan kami</p>
             </div>
           </div>
 

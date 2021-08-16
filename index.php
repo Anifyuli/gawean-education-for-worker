@@ -76,7 +76,7 @@
           <div>
             <h1>Maju dan berkembang serta membangun insan kreatif bersama Gawean</h1>
             <h2>Dapatkan informasi, kelas atraktif untuk meningkatkan produktivitas diri dalam melihat peluang usaha di sekitar Anda</h2>
-            <a href="#about" class="btn-get-started scrollto">Ayo Gabung <span class="icofont-arrow-right"></span>  </a>
+            <a href="./login.php" class="btn-get-started scrollto" target="blank">Ayo Gabung <span class="icofont-arrow-right"></span>  </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
@@ -282,6 +282,8 @@
 
       </div>
     </section><!-- End Team Section -->
+
+  <br>
 
   </main><!-- End #main -->
 

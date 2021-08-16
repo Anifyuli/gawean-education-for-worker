@@ -347,7 +347,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Hak Cipta <strong><span>Gawean</span></strong>. Seluruh hak cipta dilindungi Undan-Undang
+        &copy; Hak Cipta <strong><span>Gawean</span></strong>. Seluruh hak cipta dilindungi Undang-Undang
       </div>
       <div class="credits">
         Dari kami, <a href="">Gawean</a>

@@ -29,6 +29,7 @@
                         <label for="Password">Kata Sandi</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
+                    <p class="text-left"> Belum punya akun? Silahkan buat akun Anda<a href="./sign-in.php"> disini</a></p>
                     <button type="submit" class="btn btn-lg btn-primary" name="login" value="masuk">Masuk</button>
                 </form>
             </div>
